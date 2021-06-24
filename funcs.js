@@ -10,13 +10,9 @@ function isFive(num) {
 Write a function isOdd that takes in a number as an argument and returns true if the number is odd and returns false otherwise.
 */
 function isOdd(number) {
-  if (number instanceof String) throw Error;
-  if (number instanceof Object) throw  Error;
-  if (number instanceof Array) throw Error;
-
-  //let positive = Math.abs(number)
-  //console.log(-1 instanceof Number)
-  //if (!(positive instanceof Number)) throw Error;
+  if (typeof number === "string") throw new Error;
+  if (number instanceof Object) throw  new Error;
+  if (number instanceof Array) throw new Error;
 
   if (number % 2 != 0) return true;
   return false;
@@ -31,7 +27,7 @@ function isOdd(number) {
 
 function myRange(min, max, step = 1) {
   let result = [];
-  for(let i = min; i <= max; i++){
+  for(let i = min; i <= max; i+=step){
     result.push(i);
 
   }
