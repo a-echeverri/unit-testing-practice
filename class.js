@@ -20,7 +20,7 @@ class Word {
     let newWord = "";
     for (let i = 0; i < this.word.length; i++) {
       let char = this.word[i];
-      if (vowels.includes(char)) {
+      if (!vowels.includes(char)) {
         newWord += char;
       }
     }
@@ -32,15 +32,9 @@ class Word {
     if (vowels.includes(this.word[0])) {
       return this.word + "yay";
     }
+    let firstLetter = this.word[0];
+    this.word.split('').splice(0, 1).join('') + firstLetter + 'ay';
 
-    for (let i = 0; i < this.word.length; i++) {
-      let char = this.word[i];
-      if (vowels.includes(char)) {
-        let first_half = this.word.slice(0, i);
-        let second_half = this.word.slice(i);
-        return second_half + first_half + "ay";
-      }
-    }
   }
 }
 

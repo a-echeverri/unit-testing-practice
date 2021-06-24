@@ -1,15 +1,26 @@
 /*1. Is Five
-Define a function isFive that will return true if a nuber is equal to 5 and false if it is not.
+Define a function isFive that will return true if a number is equal to 5 and false if it is not.
 */
 function isFive(num) {
-  // Your code here
+  if(num === 5) return true;
+  return false;
 }
 
 /*2. Is Odd
 Write a function isOdd that takes in a number as an argument and returns true if the number is odd and returns false otherwise.
 */
 function isOdd(number) {
-  // Your code here
+  if (number instanceof String) throw Error;
+  if (number instanceof Object) throw  Error;
+  if (number instanceof Array) throw Error;
+
+  //let positive = Math.abs(number)
+  //console.log(-1 instanceof Number)
+  //if (!(positive instanceof Number)) throw Error;
+
+  if (number % 2 != 0) return true;
+  return false;
+
 }
 
 /*3. Array  of the Range
@@ -19,7 +30,12 @@ function isOdd(number) {
 */
 
 function myRange(min, max, step = 1) {
-  // Your code here
+  let result = [];
+  for(let i = min; i <= max; i++){
+    result.push(i);
+
+  }
+  return result;
 }
 
 
